@@ -1,6 +1,12 @@
+import Image from "next/image";
+import ArrowLinkRed from "../assets/arrowLinkRed.svg";
+
 export const ServicesOffersList = () => {
   return (
-    <div className="bg-red-800 self-stretch flex w-full flex-col items-center mt-36 px-5 py-12 max-md:max-w-full max-md:mt-10">
+    <div
+      id="services-offers-list"
+      className="bg-red-800 self-stretch flex w-full flex-col items-center mt-36 px-5 py-12 max-md:max-w-full max-md:mt-10"
+    >
       <div className="flex w-full max-w-[1200px] items-stretch justify-between gap-5 mt-12 mb-12 max-md:max-w-full max-md:flex-wrap max-md:my-10">
         <div className="flex grow basis-[0%] flex-col">
           <div className="bg-orange-100 flex w-[100px] shrink-0 h-2 flex-col self-start" />
@@ -27,11 +33,12 @@ export const ServicesOffersList = () => {
               </div>
             </div>
             <div className="items-center bg-orange-100 flex aspect-square flex-col mt-2.5 p-3 rounded-[69px] self-start">
-              <img
+              {/* <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/8098ffe8-eb53-4495-9f22-795bb69ecc78?"
                 className="aspect-square object-contain object-center w-[11px] stroke-[2px] stroke-red-800 overflow-hidden"
-              />
+              /> */}
+              <Image src={ArrowLinkRed} alt="/" />
             </div>
           </div>
           <div className="text-orange-100 text-lg leading-7 mt-5 max-md:max-w-full">
@@ -51,11 +58,13 @@ export const ServicesOffersList = () => {
               </div>
             </div>
             <div className="items-center bg-orange-100 flex aspect-square flex-col p-3 rounded-[69px] self-start">
-              <img
+              {/* <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/a22f4cee-34ec-4f78-bb83-605c145065d7?"
                 className="aspect-square object-contain object-center w-[11px] stroke-[2px] stroke-red-800 overflow-hidden"
-              />
+              /> */}
+              <Image src={ArrowLinkRed} alt="/" />
+
             </div>
           </div>
           <div className="bg-orange-100 shrink-0 h-px mt-12 max-md:max-w-full max-md:mt-10" />
@@ -69,11 +78,13 @@ export const ServicesOffersList = () => {
               </div>
             </div>
             <div className="items-center bg-orange-100 self-center flex aspect-square flex-col my-auto p-3 rounded-[69px]">
-              <img
+              {/* <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/27bcd311-3d74-43ee-bea6-93d0d5304dd4?"
                 className="aspect-square object-contain object-center w-[11px] stroke-[2px] stroke-red-800 overflow-hidden"
-              />
+              /> */}
+              <Image src={ArrowLinkRed} alt="/" />
+
             </div>
           </div>
         </div>
