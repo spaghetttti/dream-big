@@ -1,4 +1,4 @@
-export async function GET(request: Request) {
+export async function GET(request) {
     const data = [
         {
             "id_propertie": 1,
