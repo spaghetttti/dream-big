@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ArrowLinkRed from "../assets/arrowLinkRed.svg";
+import ArrowLinkRed from "../../assets/arrowLinkRed.svg";
 
 export const ServicesOffersList = () => {
   return (

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import JobOffer1Image from "../assets/1.jpeg";
-import JobOffer2Image from "../assets/2.jpeg";
-import JobOffer3Image from "../assets/3.jpeg";
-import ArrowLink from '../assets/arrowLink.svg'
+import JobOffer1Image from "../../assets/1.jpeg";
+import JobOffer2Image from "../../assets/2.jpeg";
+import JobOffer3Image from "../../assets/3.jpeg";
+import ArrowLink from '../../assets/arrowLink.svg'
 
 export const JobOffersList = () => {
   return (

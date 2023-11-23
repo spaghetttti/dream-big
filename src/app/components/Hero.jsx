@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import HeroImage from "../assets/yellow-main.jpg";
-import ArrowDownSVG from "../assets/arrowDown.svg";
+import HeroImage from "../../assets/yellow-main.jpg";
+import ArrowDownSVG from "../../assets/arrowDown.svg";
 import { Socials } from "./Socials";
 
 export const Hero = () => {

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import PedroImage from "../assets/pedro.jpg";
-import Quotes from '../assets/quotes.svg';
-import LeftArrow from '../assets/arrowLeft.svg';
-import RightArrow from '../assets/arrowRight.svg';
+import PedroImage from "../../assets/pedro.jpg";
+import Quotes from '../../assets/quotes.svg';
+import LeftArrow from '../../assets/arrowLeft.svg';
+import RightArrow from '../../assets/arrowRight.svg';
 
 
 export const Testimonials = () => {
