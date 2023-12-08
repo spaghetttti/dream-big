@@ -16,9 +16,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2YUwQChz1Lz0LNFPyzCSFSneXfz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "demo",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/asilbekmuminov/work/dream-big/dream-big",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -48,6 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700593448973</updated>
       <workItem from="1700593450036" duration="751000" />
+      <workItem from="1700816431752" duration="11000" />
     </task>
     <servers />
   </component>

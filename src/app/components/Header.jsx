@@ -46,7 +46,7 @@ export const Header = () => {
           About Us
         </div>
       </div>
-      <div className="text-red-800 text-lg font-bold leading-5 whitespace-nowrap items-center self-center my-auto px-5 py-3 border-2 border-solid border-red-800">
+      <div className="hidden md:block text-red-800 text-lg font-bold leading-5 whitespace-nowrap items-center self-center my-auto px-5 py-3 border-2 border-solid border-red-800">
         Contact us
       </div>
     </div>

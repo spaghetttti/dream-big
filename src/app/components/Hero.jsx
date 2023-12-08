@@ -19,11 +19,14 @@ export const Hero = () => {
             textShadow:
               "-1px -1px 0 #EEE8D2, 1px -1px 0 #EEE8D2, -1px 1px 0 #EEE8D2, 1px 1px 0 #EEE8D2",
           }}
-          className="stroke-[#EEE8D2] text-red-800 text-7xl font-extrabold leading-[90px] tracking-[7.2px] uppercase self-stretch mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-[55px] max-md:mt-10"
+          className="stroke-[#EEE8D2] text-red-800 text-7xl font-extrabold leading-[90px] tracking-[7.2px] uppercase self-stretch mt-10 max-md:max-w-full max-md:text-5xl max-md:leading-[55px] max-md:mt-10"
         >
-          Dream big <br/> with us
+          Dream big <br /> with us
         </div>
-        <div className="text-red-800 text-2xl leading-9 self-stretch mt-11 max-w-[340px] max-md:max-w-full max-md:mt-10">
+        <div style={{
+            textShadow:
+              "-1px -1px 0 #EEE8D2, 1px -1px 0 #EEE8D2, -1px 1px 0 #EEE8D2, 1px 1px 0 #EEE8D2",
+          }} className="text-red-800 text-2xl leading-9 self-stretch mt-11 max-w-[340px] max-md:max-w-full max-md:mt-10">
           <span className="">Ride with </span>
           <span className="font-extrabold">Dream Big Transportation</span>
           <span className="">
@@ -40,13 +43,15 @@ export const Hero = () => {
         <div className="py-2"></div>
         <Socials />
       </div>
-      <Image className="absolute ml-80" width={772} src={HeroImage} alt="" />
-      <Image
-        onClick={handleClick}
-        className="relative cursor-pointer  top-[110px]"
-        src={ArrowDownSVG}
-        alt=""
-      />
+      <Image className="absolute md:ml-80" width={772} src={HeroImage} alt="" />
+      <div className="hidden md:block relative top-[410px]">
+        <Image
+          onClick={handleClick}
+          className="cursor-pointer"
+          src={ArrowDownSVG}
+          alt="arrow-down"
+        />
+      </div>
     </div>
   );
 };

@@ -35,7 +35,7 @@ export const Testimonials = () => {
                   <div className="text-orange-100 text-xl leading-6 whitespace-nowrap">
                     Sam Smith
                   </div>
-                  <div className="text-orange-100 text-lg font-medium leading-6 whitespace-nowrap mt-2.5">
+                  <div className="text-orange-100 text-l md:text-lg font-medium leading-6 whitespace-nowrap mt-2.5">
                     Dedicated Driver at Dream Big Transportation
                   </div>
                 </div>

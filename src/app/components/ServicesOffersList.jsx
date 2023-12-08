@@ -16,11 +16,11 @@ export const ServicesOffersList = () => {
           <div className="text-orange-100 text-lg leading-7 self-stretch mt-6">
             We will help you with finding a solution and solving your problem.
           </div>
-          <div className="text-red-800 text-center text-2xl font-bold leading-8 uppercase self-stretch items-center mt-24 px-5 py-12 rounded-[50%] max-md:mt-10">
+          {/* <div className="text-red-800 text-center text-2xl font-bold leading-8 uppercase self-stretch items-center mt-24 px-5 py-12 rounded-[50%] max-md:mt-10">
             Let’s
             <br />
             Talk
-          </div>
+          </div> */}
         </div>
         <div className="flex grow basis-[0%] flex-col items-stretch mt-7 self-end max-md:max-w-full">
           <div className="flex w-full items-stretch justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
