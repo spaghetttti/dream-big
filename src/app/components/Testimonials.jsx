@@ -7,8 +7,8 @@ import RightArrow from '../../assets/arrowRight.svg';
 
 export const Testimonials = () => {
   return (
-    <div className="bg-red-800 self-stretch flex w-full flex-col items-center mt-36 px-5 py-12 max-md:max-w-full max-md:mt-10">
-      <div className="w-full max-w-[1200px] my-12 max-md:max-w-full max-md:my-10">
+    <div className="bg-red-800 self-stretch flex w-full flex-col items-center mt-36 px-5 md:py-12 pb-6 max-md:max-w-full ">
+      <div className="w-full max-w-[1200px] md:my-12 max-md:max-w-full">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
           <div className="flex flex-col items-stretch w-[47%] max-md:w-full max-md:ml-0">
             <div className="flex grow flex-col max-md:max-w-full max-md:mt-10">
@@ -35,12 +35,12 @@ export const Testimonials = () => {
                   <div className="text-orange-100 text-xl leading-6 whitespace-nowrap">
                     Sam Smith
                   </div>
-                  <div className="text-orange-100 text-l md:text-lg font-medium leading-6 whitespace-nowrap mt-2.5">
+                  <div className="text-orange-100 text-l md:text-lg font-medium leading-6 mt-2.5">
                     Dedicated Driver at Dream Big Transportation
                   </div>
                 </div>
-                <Image src={LeftArrow} alt="/" />
-                <Image src={RightArrow} alt="/" />
+                {/* <Image src={LeftArrow} alt="/" />
+                <Image src={RightArrow} alt="/" /> */}
               </div>
             </div>
           </div>

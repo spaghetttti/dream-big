@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
           <Header />
           <div className="bg-red-800 self-stretch min-h-[1px] w-full mt-4 max-md:max-w-full" />
           {children}
-          <div className="bg-red-800 self-stretch min-h-[1px] w-full mt-48 max-md:max-w-full max-md:mt-10" />
+          <div className="bg-red-800 self-stretch min-h-[1px] w-full max-md:max-w-full max-md:mt-10" />
           <Footer />
         </div>
       </body>

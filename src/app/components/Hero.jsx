@@ -3,13 +3,9 @@ import Image from "next/image";
 import HeroImage from "../../assets/yellow-main.jpg";
 import ArrowDownSVG from "../../assets/arrowDown.svg";
 import { Socials } from "./Socials";
+import { handleScrollToView } from "../helpers/scrollToView";
 
 export const Hero = () => {
-  const handleClick = () => {
-    const targetElement = document.getElementById("job-offers-list");
-    targetElement.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div className="relative self-center flex w-full max-w-[1200px] gap-0 mt-16 px-5 max-md:max-w-full max-md:flex-wrap max-md:justify-center max-md:mt-10">
       <div className=" z-2 z-[1] flex mr-0 grow basis-[0%] flex-col mt-24 max-md:max-w-full max-md:mt-10">
@@ -23,10 +19,13 @@ export const Hero = () => {
         >
           Dream big <br /> with us
         </div>
-        <div style={{
+        <div
+          style={{
             textShadow:
               "-1px -1px 0 #EEE8D2, 1px -1px 0 #EEE8D2, -1px 1px 0 #EEE8D2, 1px 1px 0 #EEE8D2",
-          }} className="text-red-800 text-2xl leading-9 self-stretch mt-11 max-w-[340px] max-md:max-w-full max-md:mt-10">
+          }}
+          className="text-red-800 text-2xl leading-9 self-stretch mt-11 max-w-[340px] max-md:max-w-full max-md:mt-10"
+        >
           <span className="">Ride with </span>
           <span className="font-extrabold">Dream Big Transportation</span>
           <span className="">
@@ -34,7 +33,10 @@ export const Hero = () => {
             - Your Trusted Partner, Ensuring Safe and Secure Journeys!
           </span>
         </div>
-        <div className="text-orange-100 text-2xl font-bold leading-9 tracking-[2.4px] uppercase whitespace-nowrap items-center bg-red-800 w-[200px] mt-6 px-5 py-5">
+        <div
+          onClick={() => handleScrollToView("contact-form")}
+          className="text-orange-100 cursor-pointer text-2xl font-bold leading-9 tracking-[2.4px] uppercase whitespace-nowrap items-center bg-red-800 w-[200px] mt-6 px-5 py-5"
+        >
           Let’s Talk
         </div>
         <div className="text-black text-2xl font-bold leading-9 self-stretch whitespace-nowrap mt-20 max-md:max-w-full max-md:mt-10">
@@ -43,10 +45,10 @@ export const Hero = () => {
         <div className="py-2"></div>
         <Socials />
       </div>
-      <Image className="absolute md:ml-80" width={772} src={HeroImage} alt="" />
+      <Image className="absolute md:self-center lg:ml-80" width={772} src={HeroImage} alt="" />
       <div className="hidden md:block relative top-[410px]">
         <Image
-          onClick={handleClick}
+          onClick={() => handleScrollToView("job-offers-list")}
           className="cursor-pointer"
           src={ArrowDownSVG}
           alt="arrow-down"

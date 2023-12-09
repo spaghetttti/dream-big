@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 import JobOffer1Image from "../../assets/1.jpeg";
 import JobOffer2Image from "../../assets/2.jpeg";
 import JobOffer3Image from "../../assets/3.jpeg";
-import ArrowLink from '../../assets/arrowLink.svg'
+import ArrowLink from "../../assets/arrowLink.svg";
+import { handleScrollToView } from "../helpers/scrollToView";
 
 export const JobOffersList = () => {
   return (
@@ -23,21 +25,25 @@ export const JobOffersList = () => {
             <Image src={JobOffer1Image} alt="/" />
           </div>
           <div className="flex flex-col items-stretch w-[45%] ml-5 max-md:w-full max-md:ml-0">
-            <div className="flex flex-col my-auto max-md:max-w-full md:max-md:mt-10 p-5"> 
+            <div className="flex flex-col my-auto max-md:max-w-full md:max-md:mt-10 p-5">
               <div className="text-red-800 text-2xl md:text-3xl font-bold leading-10 self-stretch max-md:max-w-full">
                 Apply as a Company Driver
               </div>
               <div className="text-black text-base leading-5 self-stretch mt-4 max-md:max-w-full">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                aliquam, purus sit amet luctus venenatis, lectus magna fringilla
-                urna, porttitor
+                As a company driver, you will have the opportunity to work as
+                part of our dedicated team. Enjoy the benefits of a stable
+                position with consistent routes and competitive compensation.
               </div>
-              <div className="flex max-w-full justify-between md:justify-start items-center gap-3 mt-10 pr-5 max-md:pr-5">
+              <div
+                onClick={() => handleScrollToView("contact-form")}
+                className="flex cursor-pointer max-w-full justify-between md:justify-start items-center gap-3 mt-10 pr-5 max-md:pr-5"
+              >
                 <div className="text-red-800 text-lg font-bold leading-7 tracking-widest my-auto">
-                  KNOW MORE
+                  CONTACT US FOR MORE INFO
+                  {/* KNOW MORE */}
                 </div>
-                <div className="items-center bg-red-800 self-stretch flex aspect-square flex-col p-3 rounded-[69px]">
-                <Image src={ArrowLink} alt="/" />
+                <div className="items-center bg-red-800 flex aspect-square flex-col p-3 rounded-[69px]">
+                  <Image src={ArrowLink} alt="/" />
                 </div>
               </div>
             </div>
@@ -52,16 +58,21 @@ export const JobOffersList = () => {
                 Become a Lease Driver
               </div>
               <div className="text-black text-base leading-5 mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                aliquam, purus sit amet luctus venenatis, lectus magna fringilla
-                urna, porttitor
+                If you are ready to take the next step in your career, becoming
+                a lease driver with Dream Big Transportation Inc might be the
+                perfect fit. As a lease driver, you will have the opportunity to
+                operate your own truck while enjoying the benefits of our
+                established network and support.
               </div>
-              <div className="flex items-center justify-between md:justify-start gap-3 mt-10 pr-10 max-md:pr-5">
+              <div
+                onClick={() => handleScrollToView("contact-form")}
+                className="flex cursor-pointer items-center justify-between md:justify-start gap-3 mt-10 pr-10 max-md:pr-5"
+              >
                 <div className="text-red-800 text-lg font-bold leading-7 tracking-widest my-auto">
-                  KNOW MORE
+                  CONTACT US FOR MORE INFO
                 </div>
-                <div className="items-center bg-red-800 self-stretch flex aspect-square flex-col p-3 rounded-[69px]">
-                <Image src={ArrowLink} alt="/" />
+                <div className="items-center bg-red-800 flex aspect-square flex-col p-3 rounded-[69px]">
+                  <Image src={ArrowLink} alt="/" />
                 </div>
               </div>
             </div>
@@ -82,25 +93,28 @@ export const JobOffersList = () => {
                 Join us as an Owner Operator
               </div>
               <div className="text-black text-base leading-5 self-stretch mt-4 max-md:max-w-full">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                aliquam, purus sit amet luctus venenatis, lectus magna fringilla
-                urna, porttitor
+                Are you an experienced owner operator looking for a reliable
+                partner? Join Dream Big Transportation Inc as an owner operator
+                and leverage our resources and industry expertise.
               </div>
-              <div className="flex justify-between md:justify-start max-w-full items-center gap-3 mt-10 pr-4">
+              <div
+                onClick={() => handleScrollToView("contact-form")}
+                className="flex cursor-pointer justify-between md:justify-start max-w-full items-center gap-3 mt-10 pr-4"
+              >
                 <div className="text-red-800 text-lg font-bold leading-7 tracking-widest my-auto">
-                  KNOW MORE
+                  CONTACT US FOR MORE INFO
                 </div>
-                <div className="items-center bg-red-800 self-stretch flex aspect-square flex-col p-3 rounded-[69px]">
-                <Image src={ArrowLink} alt="/" />
+                <div className="items-center bg-red-800 flex aspect-square flex-col p-3 rounded-[69px]">
+                  <Image src={ArrowLink} alt="/" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="text-orange-100 text-2xl font-bold leading-9 uppercase whitespace-nowrap items-center bg-red-800 self-center max-w-full mt-12 px-5 py-5 max-md:mt-10">
+      {/* <div className="text-orange-100 text-2xl font-bold leading-9 uppercase whitespace-nowrap items-center bg-red-800 self-center max-w-full mt-12 px-5 py-5 max-md:mt-10">
         Browse All
-      </div>
+      </div> */}
     </div>
   );
 };

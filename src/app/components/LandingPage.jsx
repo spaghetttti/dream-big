@@ -4,8 +4,10 @@ import { ServicesOffersList } from "./ServicesOffersList";
 import { JobOffersList } from "./JobOffersList";
 import { Testimonials } from "./Testimonials";
 import { EndingBanner } from "./EndingBanner";
+import { AboutUs } from "./AboutUs";
 
-export function MyComponent(props) {
+
+export function LandingPage(props) {
   return (
     <>
       <Hero />
@@ -13,6 +15,7 @@ export function MyComponent(props) {
       <JobOffersList />
       <Testimonials />
       <EndingBanner />
+      <AboutUs />
     </>
   );
 }
