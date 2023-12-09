@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Dream Big Transportation",
-  description: "Dream Big Transportation incorporated",
+  description: "Dream Big Transportation incorporated, an authorized carrier specializing in property transportation and logistics services",
 };
 
 export default function RootLayout({ children }) {

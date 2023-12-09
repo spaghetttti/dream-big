@@ -27,7 +27,7 @@ export const ServicesOffersList = () => {
                 Reliable and Timely transportation
               </div>
             </div>
-            <div className="items-center bg-orange-100 flex aspect-square flex-col mt-2.5 p-3 rounded-[69px] self-center">
+            <div className="items-center bg-orange-100 hidden md:flex aspect-square flex-col mt-2.5 p-3 rounded-[69px] self-center">
               {/* <Image src={ArrowLinkRed} alt="/" /> */}
             </div>
           </div>
@@ -46,7 +46,7 @@ export const ServicesOffersList = () => {
                 Safe and Efficient delivery
               </div>
             </div>
-            <div className="items-center bg-orange-100 flex aspect-square flex-col p-3 rounded-[69px] self-center">
+            <div className="items-center bg-orange-100 hidden md:flex aspect-square flex-col p-3 rounded-[69px] self-center">
               {/* <Image src={ArrowLinkRed} alt="/" /> */}
             </div>
           </div>
@@ -60,7 +60,7 @@ export const ServicesOffersList = () => {
                 A fleet of 45 power units and a team of experienced drivers
               </div>
             </div>
-            <div className="items-center bg-orange-100 self-center flex aspect-square flex-col my-auto p-3 rounded-[69px]">
+            <div className="items-center bg-orange-100 self-center hidden md:flex aspect-square flex-col my-auto p-3 rounded-[69px]">
               {/* <Image src={ArrowLinkRed} alt="/" /> */}
             </div>
           </div>

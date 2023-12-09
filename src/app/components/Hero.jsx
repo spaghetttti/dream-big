@@ -4,7 +4,7 @@ import HeroImage from "../../assets/yellow-main.jpg";
 import ArrowDownSVG from "../../assets/arrowDown.svg";
 import { Socials } from "./Socials";
 import { handleScrollToView } from "../helpers/scrollToView";
-import blueTruck from '../../assets/blue-truck-2.jpg';
+import blueTruck from "../../assets/blue-truck-2.jpg";
 
 export const Hero = () => {
   return (
@@ -13,11 +13,19 @@ export const Hero = () => {
         <div className="bg-red-800 flex w-[200px] shrink-0 h-2.5 flex-col" />
         <div
           style={{
+            // backgroundImage: `url(${blueTruck})` ,
             textShadow:
               "-1px -1px 0 #EEE8D2, 1px -1px 0 #EEE8D2, -1px 1px 0 #EEE8D2, 1px 1px 0 #EEE8D2",
           }}
-          className="stroke-[#EEE8D2] text-red-800 text-7xl font-extrabold leading-[90px] tracking-[7.2px] uppercase self-stretch mt-10 max-md:max-w-full max-md:text-5xl max-md:leading-[55px] max-md:mt-10"
+          className="stroke-[#EEE8D2] py-24  md:py-2 bg-cover bg-center w-full h-full md:bg-none bg-[url('../assets/blue-truck-2.jpg')] text-red-800 text-7xl font-extrabold leading-[90px] tracking-[7.2px] uppercase self-stretch mt-10 max-md:max-w-full max-md:text-5xl max-md:leading-[55px] max-md:mt-10"
         >
+          {/* <Image
+            style={{ filter: "brightness(90%)" }}
+            className="z-[-1] absolute"
+            width={780}
+            src={blueTruck}
+            alt="hero image of a truck"
+          /> */}
           Dream big <br /> with us
         </div>
         <div
@@ -46,7 +54,13 @@ export const Hero = () => {
         <div className="py-2"></div>
         <Socials />
       </div>
-      <Image  style={{ filter: 'brightness(90%)'}} className="absolute md:self-center lg:ml-80" width={780} src={blueTruck} alt="hero image of a truck" />
+      <Image
+        // style={{ filter: "brightness(90%)" }}
+        className="hidden md:block absolute md:self-center lg:ml-80"
+        width={780}
+        src={blueTruck}
+        alt="hero image of a truck"
+      />
       <div className="hidden md:block relative top-[410px]">
         <Image
           onClick={() => handleScrollToView("job-offers-list")}

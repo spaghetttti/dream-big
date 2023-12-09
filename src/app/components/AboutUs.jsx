@@ -4,7 +4,7 @@ export const AboutUs = () => {
     id="about-us"
       className="bg-red-800 self-stretch flex w-full flex-col items-center mt-16 px-5 py-12 max-md:max-w-full max-md:mt-10"
     >
-      <div className="flex w-full max-w-[1200px] items-stretch justify-between md:mt-12 md:mb-12 max-md:max-w-full max-md:flex-wrap">
+      <div className="flex-col-reverse md:flex w-full max-w-[1200px] items-stretch justify-between md:mt-12 md:mb-12 max-md:max-w-full max-md:flex-wrap">
         <div className="flex grow basis-[0%] flex-col items-stretch mt-7 self-end max-md:max-w-full">
           <div className="flex w-full items-stretch justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
             <div className="items-stretch flex justify-between gap-4 max-md:max-w-full max-md:flex-wrap">
