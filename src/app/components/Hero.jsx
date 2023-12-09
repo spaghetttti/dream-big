@@ -4,6 +4,7 @@ import HeroImage from "../../assets/yellow-main.jpg";
 import ArrowDownSVG from "../../assets/arrowDown.svg";
 import { Socials } from "./Socials";
 import { handleScrollToView } from "../helpers/scrollToView";
+import blueTruck from '../../assets/blue-truck-2.jpg';
 
 export const Hero = () => {
   return (
@@ -45,7 +46,7 @@ export const Hero = () => {
         <div className="py-2"></div>
         <Socials />
       </div>
-      <Image className="absolute md:self-center lg:ml-80" width={772} src={HeroImage} alt="" />
+      <Image  style={{ filter: 'brightness(90%)'}} className="absolute md:self-center lg:ml-80" width={780} src={blueTruck} alt="hero image of a truck" />
       <div className="hidden md:block relative top-[410px]">
         <Image
           onClick={() => handleScrollToView("job-offers-list")}

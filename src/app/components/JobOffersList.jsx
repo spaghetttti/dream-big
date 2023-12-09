@@ -3,6 +3,9 @@ import Image from "next/image";
 import JobOffer1Image from "../../assets/1.jpeg";
 import JobOffer2Image from "../../assets/2.jpeg";
 import JobOffer3Image from "../../assets/3.jpeg";
+import greyTruck from '../../assets/grey-truck-2.jpg';
+import sunsetTruck from '../../assets/sunset-truck.jpg';
+
 import ArrowLink from "../../assets/arrowLink.svg";
 import { handleScrollToView } from "../helpers/scrollToView";
 
@@ -78,7 +81,7 @@ export const JobOffersList = () => {
             </div>
           </div>
           <div className="flex flex-col items-stretch w-[61%] ml-5 max-md:w-full max-md:ml-0">
-            <Image src={JobOffer2Image} alt="/" />
+            <Image src={greyTruck} alt="/" />
           </div>
         </div>
       </div>
