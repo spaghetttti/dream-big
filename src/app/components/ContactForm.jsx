@@ -1,4 +1,4 @@
-"use client"
+"use client";
 export const ContactForm = () => {
   return (
     <section>
@@ -14,7 +14,7 @@ export const ContactForm = () => {
             <input
               type="email"
               id="email"
-              className="shadow-sm bg-gray-900 border border-gray-300 text-gray-100 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="shadow-sm border border-gray-300 text-black text-sm rounded-lg focus:ring-primary-500 focus:border-red-800 block w-full p-2.5 "
               placeholder="name@email.com"
               required
             />
@@ -29,7 +29,7 @@ export const ContactForm = () => {
             <input
               type="text"
               id="subject"
-              className="shadow-sm bg-gray-900 border border-gray-300 text-gray-100 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="shadow-sm border border-gray-300 text-black text-sm rounded-lg focus:ring-primary-500 focus:border-red-800 block w-full p-2.5 "
               placeholder="Let us know how we can help you"
               required
             />
@@ -44,7 +44,7 @@ export const ContactForm = () => {
             <textarea
               id="message"
               rows="6"
-              className="shadow-sm bg-gray-900 border border-gray-300 text-gray-100 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="shadow-sm border border-gray-300 text-black text-sm rounded-lg focus:ring-primary-500 focus:border-red-800 block w-full p-2.5 "
               placeholder="Leave a message..."
             ></textarea>
           </div>

@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/image";
-import JobOffer1Image from "../../assets/1.jpeg";
-import JobOffer2Image from "../../assets/2.jpeg";
-import JobOffer3Image from "../../assets/3.jpeg";
-import greyTruck from '../../assets/grey-truck-2.jpg';
-import sunsetTruck from '../../assets/sunset-truck.jpg';
+import threeTrucks from "../../assets/3-trucks.jpeg";
+import whiteTruckFront from '../../assets/white-truck-front.jpg';
+import sunsetTruck from '../../assets/truck-night.jpeg';
 
 import ArrowLink from "../../assets/arrowLink.svg";
 import { handleScrollToView } from "../helpers/scrollToView";
@@ -25,7 +23,7 @@ export const JobOffersList = () => {
       <div className="border self-stretch -mr-5 mt-16 border-solid border-red-800 max-md:max-w-full max-md:mt-10">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
           <div className="flex flex-col items-stretch w-[55%] max-md:w-full max-md:ml-0">
-            <Image src={JobOffer1Image} alt="/" />
+            <Image src={threeTrucks} alt="/" />
           </div>
           <div className="flex flex-col items-stretch w-[45%] ml-5 max-md:w-full max-md:ml-0">
             <div className="flex flex-col my-auto max-md:max-w-full md:max-md:mt-10 p-5">
@@ -81,14 +79,14 @@ export const JobOffersList = () => {
             </div>
           </div>
           <div className="flex flex-col items-stretch w-[61%] ml-5 max-md:w-full max-md:ml-0">
-            <Image src={greyTruck} alt="/" />
+            <Image  src={whiteTruckFront} alt="/" />
           </div>
         </div>
       </div>
       <div className="border self-stretch -mr-5 mt-12 border-solid border-red-800 max-md:max-w-full max-md:mt-10">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
           <div className="flex flex-col items-stretch w-[55%] max-md:w-full max-md:ml-0">
-            <Image src={JobOffer3Image} alt="/" />
+            <Image src={sunsetTruck} alt="/" />
           </div>
           <div className="flex flex-col items-stretch w-[45%] ml-5 max-md:w-full max-md:ml-0">
             <div className="flex flex-col my-auto max-md:max-w-full md:max-md:mt-10 p-5">
