@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ export const ContactForm = () => {
     message: "",
     subject: "",
   });
+  const form = useRef();
 
   const handleChange = (e) => {
     console.log(e.target.name);
@@ -16,31 +18,37 @@ export const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData, typeof formData);
-    try {
-      const response = await fetch("/api/emailForward", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    emailjs.sendForm('service_b2mgrua', 'template_jlwczc6', form.current, '2PQfWeNf_lOPPH-ER')
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+    // try {
+    //   const response = await fetch("/api/emailForward", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(formData),
+    //   });
 
-      if (response.ok) {
-        // Handle success, show confirmation, reset form, etc.
-        console.log("Email sent successfully!");
-      } else {
-        // Handle error response
-        console.error("Failed to send email.");
-      }
-    } catch (error) {
-      console.error("Error sending email:", error);
-    }
+    //   if (response.ok) {
+    //     // Handle success, show confirmation, reset form, etc.
+    //     console.log("Email sent successfully!");
+    //   } else {
+    //     // Handle error response
+    //     console.error("Failed to send email.");
+    //   }
+    // } catch (error) {
+    //   console.error("Error sending email:", error);
+    // }
   };
 
   return (
     <section>
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <form onSubmit={handleSubmit} id="contact-form" className="space-y-8">
+        <form  ref={form} onSubmit={handleSubmit} id="contact-form" className="space-y-8">
           <div>
             <label
               for="email"
