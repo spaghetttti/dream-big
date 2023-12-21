@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -16,12 +16,22 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
-    .then((result) => {
-        console.log(result.text);
-    }, (error) => {
-        console.log(error.text);
-    });
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          if (result.status === 200) alert("Your email was sent successfully!");
+          console.log(result.status, result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     // try {
     //   const response = await fetch("/api/emailForward", {
     //     method: "POST",
@@ -46,7 +56,12 @@ export const ContactForm = () => {
   return (
     <section>
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <form  ref={form} onSubmit={handleSubmit} id="contact-form" className="space-y-8">
+        <form
+          ref={form}
+          onSubmit={handleSubmit}
+          id="contact-form"
+          className="space-y-8"
+        >
           <div>
             <label
               for="email"
