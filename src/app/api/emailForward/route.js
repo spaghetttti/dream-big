@@ -8,10 +8,10 @@ export async function POST(request) {
 
     // Send email
     const mailOptions = {
-      from: process.env.REDIRECT_EMAIL_ADDRESS, // Sender email
-      to: process.env.REDIRECT_EMAIL_ADDRESS, // Recipient's email address
+      from: process.env.NEXT_PUBLIC_HR_EMAIL_ADDRESS, // Sender email
+      to: process.env.NEXT_PUBLIC_HR_EMAIL_ADDRESS, // Recipient's email address
       subject: `Subject of your email: ${subject}`,
-      text: `Email: ${email}\nMessage: ${message}`,
+      text: `Email: ${email}\nMessage: ${message}\nThis email came from dreambtransporting.com`,
     };
 
     const r = await transporter.sendMail(mailOptions);

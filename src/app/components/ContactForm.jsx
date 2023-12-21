@@ -11,14 +11,12 @@ export const ContactForm = () => {
   const form = useRef();
 
   const handleChange = (e) => {
-    console.log(e.target.name);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData, typeof formData);
-    emailjs.sendForm('service_b2mgrua', 'template_jlwczc6', form.current, '2PQfWeNf_lOPPH-ER')
+    emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
     .then((result) => {
         console.log(result.text);
     }, (error) => {
@@ -57,7 +55,6 @@ export const ContactForm = () => {
               Your email
             </label>
             <input
-              // value={formData.email}
               onChange={handleChange}
               type="email"
               id="email"
@@ -75,7 +72,6 @@ export const ContactForm = () => {
               Subject
             </label>
             <input
-              // defa={formData.subject}
               onChange={handleChange}
               type="text"
               id="subject"
@@ -93,7 +89,6 @@ export const ContactForm = () => {
               Your message
             </label>
             <textarea
-              // value={formData.message}
               onChange={handleChange}
               id="message"
               name="message"
