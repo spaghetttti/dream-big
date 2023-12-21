@@ -5,7 +5,7 @@ export const ServicesOffersList = () => {
   return (
     <div
       id="services-offers-list"
-      className="bg-red-800 self-stretch flex w-full flex-col items-center mt-36 px-5 py-12 max-md:max-w-full max-md:mt-10"
+      className="bg-red-800 self-stretch flex w-full flex-col items-center mt-16 px-5 py-12 max-md:max-w-full max-md:mt-10"
     >
       <div className="flex w-full max-w-[1200px] items-stretch justify-between gap-5 md:mt-12 md:mb-12 max-md:max-w-full max-md:flex-wrap">
         <div className="flex grow basis-[0%] flex-col">
