@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import threeTrucks from "../../assets/3-trucks.jpeg";
-import whiteTruckFront from '../../assets/white-truck-front.jpg';
+import whiteTrucks from '../../assets/white-trucks-2.jpeg';
 import sunsetTruck from '../../assets/truck-night.jpeg';
 
 import ArrowLink from "../../assets/arrowLink.svg";
@@ -79,7 +79,7 @@ export const JobOffersList = () => {
             </div>
           </div>
           <div className="flex flex-col items-stretch w-[61%] ml-5 max-md:w-full max-md:ml-0">
-            <Image  src={whiteTruckFront} alt="/" />
+            <Image  src={whiteTrucks} alt="/" />
           </div>
         </div>
       </div>
