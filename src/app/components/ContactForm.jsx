@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export const ContactForm = () => {
+  // 1. Добавляем 'consent' в состояние формы
   const [formData, setFormData] = useState({
     email: "",
     message: "",
@@ -11,6 +12,7 @@ export const ContactForm = () => {
   });
   const form = useRef();
 
+  // 2. Обновляем обработчик, чтобы он работал и с чекбоксами
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -32,6 +34,7 @@ export const ContactForm = () => {
         (result) => {
           if (result.status === 200) {
             alert("Your email was sent successfully!");
+            // Сбрасываем форму для удобства пользователя
             e.target.reset();
             setFormData({
               email: "",
@@ -58,7 +61,6 @@ export const ContactForm = () => {
           id="contact-form"
           className="space-y-8"
         >
-          {/* ...остальные поля формы остаются без изменений... */}
           <div>
             <label
               htmlFor="email"
@@ -109,7 +111,7 @@ export const ContactForm = () => {
               placeholder="Leave a message..."
             ></textarea>
           </div>
-          
+
           <div className="flex items-start">
             <div className="flex items-center h-5">
               <input
@@ -119,7 +121,6 @@ export const ContactForm = () => {
                 type="checkbox"
                 onChange={handleChange}
                 checked={formData.consent}
-                // УБРАЛИ: required атрибут. Теперь чекбокс не является обязательным.
                 className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-red-300"
               />
             </div>
