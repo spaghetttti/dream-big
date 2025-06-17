@@ -3,15 +3,22 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export const ContactForm = () => {
+  // 1. Добавлено поле `consent` для отслеживания состояния чекбокса
   const [formData, setFormData] = useState({
     email: "",
     message: "",
     subject: "",
+    consent: false,
   });
   const form = useRef();
 
+  // 2. Универсальный обработчик для всех типов полей
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -25,32 +32,24 @@ export const ContactForm = () => {
       )
       .then(
         (result) => {
-          if (result.status === 200) alert("Your email was sent successfully!");
+          if (result.status === 200) {
+            alert("Your email was sent successfully!");
+            // Опционально: сбросить форму после успешной отправки
+            e.target.reset();
+            setFormData({
+              email: "",
+              message: "",
+              subject: "",
+              consent: false,
+            });
+          }
           console.log(result.status, result.text);
         },
         (error) => {
           console.log(error.text);
+          alert("Failed to send email. Please try again later.");
         }
       );
-    // try {
-    //   const response = await fetch("/api/emailForward", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
-
-    //   if (response.ok) {
-    //     // Handle success, show confirmation, reset form, etc.
-    //     console.log("Email sent successfully!");
-    //   } else {
-    //     // Handle error response
-    //     console.error("Failed to send email.");
-    //   }
-    // } catch (error) {
-    //   console.error("Error sending email:", error);
-    // }
   };
 
   return (
@@ -64,7 +63,7 @@ export const ContactForm = () => {
         >
           <div>
             <label
-              for="email"
+              htmlFor="email"
               className="block mb-2 text-sm font-medium text-red-800"
             >
               Your email
@@ -81,7 +80,7 @@ export const ContactForm = () => {
           </div>
           <div>
             <label
-              for="subject"
+              htmlFor="subject"
               className="block mb-2 text-sm font-medium text-red-800"
             >
               Subject
@@ -98,7 +97,7 @@ export const ContactForm = () => {
           </div>
           <div className="sm:col-span-2">
             <label
-              for="message"
+              htmlFor="message"
               className="block mb-2 text-sm font-medium text-red-800"
             >
               Your message
@@ -112,9 +111,40 @@ export const ContactForm = () => {
               placeholder="Leave a message..."
             ></textarea>
           </div>
+
+          {/* 3. Блок с новым чекбоксом */}
+          <div className="flex items-start">
+            <div className="flex items-center h-5">
+              <input
+                id="consent"
+                aria-describedby="consent-description"
+                name="consent"
+                type="checkbox"
+                onChange={handleChange}
+                checked={formData.consent}
+                required // Делаем чекбокс обязательным для отправки формы
+                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-red-300"
+              />
+            </div>
+            <div className="ml-3 text-sm">
+              <label htmlFor="consent" className="font-light text-gray-600">
+                By checking this box, I consent to receive text messages from Dream Big Transportation INC related to conversational purposes, appointment reminders, follow-up on cases, order confirmations, etc. You may reply STOP to opt-out at any time. For assistance reply HELP. Messages and data rates may apply. Message frequency will vary. Learn more on our{" "}
+                <a
+                  href="/privacy-policy" // <-- ЗАМЕНИТЕ НА ВАШУ ССЫЛКУ
+                  className="font-medium text-red-800 hover:underline"
+                >
+                  Privacy Policy
+                </a>{" "}
+                Page.
+              </label>
+            </div>
+          </div>
+          {/* Конец блока с чекбоксом */}
+
           <button
             type="submit"
-            className="text-orange-100 text-center text-xl md:text-3xl font-bold leading-7 tracking-wide uppercase whitespace-nowrap items-center bg-red-800 self-center w-full max-w-full mt-11 px-5 py-6 max-md:mt-10"
+            className="text-orange-100 text-center text-xl md:text-3xl font-bold leading-7 tracking-wide uppercase whitespace-nowrap items-center bg-red-800 self-center w-full max-w-full mt-11 px-5 py-6 max-md:mt-10 disabled:bg-gray-400"
+            disabled={!formData.consent} // Кнопка неактивна, пока не поставлена галочка
           >
             Send us a message
           </button>
