@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export const ContactForm = () => {
-  // 1. Добавлено поле `consent` для отслеживания состояния чекбокса
   const [formData, setFormData] = useState({
     email: "",
     message: "",
@@ -12,7 +11,6 @@ export const ContactForm = () => {
   });
   const form = useRef();
 
-  // 2. Универсальный обработчик для всех типов полей
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -34,7 +32,6 @@ export const ContactForm = () => {
         (result) => {
           if (result.status === 200) {
             alert("Your email was sent successfully!");
-            // Опционально: сбросить форму после успешной отправки
             e.target.reset();
             setFormData({
               email: "",
@@ -61,6 +58,7 @@ export const ContactForm = () => {
           id="contact-form"
           className="space-y-8"
         >
+          {/* ...остальные поля формы остаются без изменений... */}
           <div>
             <label
               htmlFor="email"
@@ -111,8 +109,7 @@ export const ContactForm = () => {
               placeholder="Leave a message..."
             ></textarea>
           </div>
-
-          {/* 3. Блок с новым чекбоксом */}
+          
           <div className="flex items-start">
             <div className="flex items-center h-5">
               <input
@@ -122,15 +119,20 @@ export const ContactForm = () => {
                 type="checkbox"
                 onChange={handleChange}
                 checked={formData.consent}
-                required // Делаем чекбокс обязательным для отправки формы
+                // УБРАЛИ: required атрибут. Теперь чекбокс не является обязательным.
                 className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-red-300"
               />
             </div>
             <div className="ml-3 text-sm">
               <label htmlFor="consent" className="font-light text-gray-600">
-                By checking this box, I consent to receive text messages from Dream Big Transportation INC related to conversational purposes, appointment reminders, follow-up on cases, order confirmations, etc. You may reply STOP to opt-out at any time. For assistance reply HELP. Messages and data rates may apply. Message frequency will vary. Learn more on our{" "}
+                By checking this box, I consent to receive text messages from
+                Dream Big Transportation INC related to conversational purposes,
+                appointment reminders, follow-up on cases, order confirmations,
+                etc. You may reply STOP to opt-out at any time. For assistance
+                reply HELP. Messages and data rates may apply. Message frequency
+                will vary. Learn more on our{" "}
                 <a
-                  href="/privacy-policy" // <-- ЗАМЕНИТЕ НА ВАШУ ССЫЛКУ
+                  href="/privacy-policy"
                   className="font-medium text-red-800 hover:underline"
                 >
                   Privacy Policy
@@ -139,12 +141,10 @@ export const ContactForm = () => {
               </label>
             </div>
           </div>
-          {/* Конец блока с чекбоксом */}
 
           <button
             type="submit"
-            className="text-orange-100 text-center text-xl md:text-3xl font-bold leading-7 tracking-wide uppercase whitespace-nowrap items-center bg-red-800 self-center w-full max-w-full mt-11 px-5 py-6 max-md:mt-10 disabled:bg-gray-400"
-            disabled={!formData.consent} // Кнопка неактивна, пока не поставлена галочка
+            className="text-orange-100 text-center text-xl md:text-3xl font-bold leading-7 tracking-wide uppercase whitespace-nowrap items-center bg-red-800 self-center w-full max-w-full mt-11 px-5 py-6 max-md:mt-10"
           >
             Send us a message
           </button>
